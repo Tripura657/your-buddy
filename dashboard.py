@@ -35,7 +35,7 @@ if st.session_state.page == "home":
 
     with col2:
         if st.button("Mental Health Buddy 🧑‍🤝‍🧑"):
-            st.session_state.page = "chatbot."
+            st.session_state.page = "chatbot"
 
     with col3:
         if st.button("Fictional Talk 🎭"):

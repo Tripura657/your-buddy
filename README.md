@@ -17,8 +17,6 @@ A compassionate and interactive web app built with Streamlit, designed to provid
 - Streamlit (for the web interface)  
 - Google Gemini API (for generative AI features)  
 - dotenv (for local environment variables management)  
-**Contributions**
-Contributions are welcome! Feel free to open issues or submit pull requests to improve the app.
 
 ## Setup & Usage
 

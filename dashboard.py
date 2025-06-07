@@ -1,11 +1,21 @@
-import streamlit as st
-import google.generativeai as genai
 
-# --- Page Config ---
-st.set_page_config(page_title="Mental Health Support", layout="centered")
 
 # --- Configure Gemini ---
-genai.configure(api_key="GEMINI_API_KEY")  # Replace with your actual key
+import os
+from dotenv import load_dotenv
+import streamlit as st
+import google.generativeai as genai
+st.set_page_config(page_title="Mental Health Support", layout="centered")
+
+# Load API key securely
+if "GEMINI_API_KEY" in st.secrets:
+    api_key = st.secrets["GEMINI_API_KEY"]  # Streamlit deployment
+else:
+    load_dotenv()
+    api_key = os.getenv("GEMINI_API_KEY")  # Local development
+
+genai.configure(api_key=api_key)
+  # Replace with your actual key
 
 # --- Load model ---
 model = genai.GenerativeModel("gemini-1.5-flash")
@@ -25,7 +35,7 @@ if st.session_state.page == "home":
 
     with col2:
         if st.button("Mental Health Buddy 🧑‍🤝‍🧑"):
-            st.session_state.page = "chatbot"
+            st.session_state.page = "chatbot."
 
     with col3:
         if st.button("Fictional Talk 🎭"):

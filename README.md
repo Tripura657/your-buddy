@@ -18,11 +18,4 @@ A compassionate and interactive web app built with Streamlit, designed to provid
 - Google Gemini API (for generative AI features)  
 - dotenv (for local environment variables management)  
 
-## Setup & Usage
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/your-username/mental-health-support.git
-cd mental-health-support
 

@@ -72,7 +72,7 @@ if st.session_state.page == "motivation":
 # --- Mental Health Chatbot Logic ---
 elif st.session_state.page == "chatbot":
     st.title("Mental Health Buddy 🧑‍🤝‍🧑")
-    query = st.text_input("Hello! I'm here to listen and support you. Feel free to share your thoughts, and I'll try my best to help. Remember, you're not alone! 💙")
+    query = st.text_input("Hello! I'm here to listen and support you...")
     if query:
         try:
             response = model.generate_content(
@@ -81,6 +81,7 @@ elif st.session_state.page == "chatbot":
             st.success(response.text)
         except:
             st.error("Oops! Something went wrong.")
+
     st.button("🔙 Back to Home", on_click=lambda: st.session_state.update({"page": "home"}))
 
 # --- Character Chat Logic ---
